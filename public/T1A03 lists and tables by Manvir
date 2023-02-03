@@ -1,0 +1,21 @@
+<h5>Version 0.0.2</h5>   
+      <h1 align=center>T1A03-Lists-and-tables-by-Manvir</h1>
+      <h2> Lists</h2>
+      <ol> Ordered list of fav foods
+        <li> Pizza
+          <li> Fries
+            <li> Chicken
+              <li> Ramen
+                <li> Blueberries
+                  <li> Strawberries
+      </ol>
+      <ul> Unordered list of countries
+        <li> Canada
+          <li> Russia
+            <li> Argentina
+              <li> Brazil
+                <li> United States of America
+                  <li> Portugal
+                    <li> Spain
+      </ul>
+      <b> Assignments</br>
