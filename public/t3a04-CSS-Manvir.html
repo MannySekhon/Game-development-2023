@@ -1,4 +1,4 @@
-Version 0.0.6</br>
+Version 0.0.7</br>
 <h1 align=center> T3A04 CSS by Manvir</h1>
 Reference Link <br>
 <b><a href="https://www.w3schools.com/cssref/default.asp">w3schools</a></b><br>
@@ -22,3 +22,29 @@ document.getElementById('myB1').style.backgroundColor= 'yellow'
 <body style="background-color:powderblue;">
 
               cursor: crosshair;<b> Try hovering over this sentence. </b>
+                                          
+                                          
+                                          /* Keyword value */
+cursor: auto;
+cursor: pointer;
+/* … */
+cursor: zoom-out;
+
+/* URL with mandatory keyword fallback */
+cursor: url(hand.cur), pointer;
+
+/* URL and coordinates, with mandatory keyword fallback */
+cursor: url(cursor_1.png) 4 12, auto;
+cursor: url(cursor_2.png) 2 2, pointer;
+
+/* URLs and fallback URLs (some with coordinates), with mandatory keyword fallback */
+cursor: url(cursor_1.svg) 4 5, url(cursor_2.svg), /* … ,*/ url(cursor_n.cur) 5 5,
+  progress;
+
+/* Global values */
+cursor: inherit;
+cursor: initial;
+cursor: revert;
+cursor: revert-layer;
+cursor: unset;
+
