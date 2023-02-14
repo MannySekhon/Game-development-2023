@@ -1,4 +1,4 @@
-Version 0.1.2</br>
+Version 0.1.3</br>
 <h1 align=center> T3A04 CSS by Manvir</h1>
 Reference Link <br>
 <b><a href="https://www.w3schools.com/cssref/default.asp">w3schools</a></b><br>
@@ -263,4 +263,55 @@ div {
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consequat leo eu odio feugiat luctus. Duis vel sagittis ipsum, non dictum nisl. Vivamus sit amet volutpat metus. Nunc tempus, mi ut vehicula porttitor, velit lacus sagittis lorem, sit amet venenatis mauris nibh sit amet urna. Nam nibh mi, commodo id diam eu, congue suscipit nunc. Vestibulum scelerisque dui tempus tincidunt luctus. Donec placerat quis neque vel ultrices. Pellentesque dignissim placerat orci sed cursus. Ut convallis leo sapien, vitae ornare nulla sodales at. Suspendisse ut vestibulum erat. Sed ut fermentum tortor. Integer quis tellus eget nisi pharetra pharetra non vitae magna. Cras ultricies, nulla id imperdiet varius, nisi odio finibus diam, at finibus lacus risus vel dui. Ut euismod consequat libero eu pharetra.</p>
 </div>
 
+</body>
+
+                     <head>
+<style>
+#container {
+  padding: 5px;
+  width: 300px;
+  aspect-ratio: 1;
+  border: solid black 2px;
+  overflow: scroll;
+  overflow-anchor: none;
+}
+
+.blue {
+  background-color: lightblue;
+  height: 20px;
+  width: 80%;
+  animation: contentExpand 5s infinite;
+}
+
+.greenDiv{
+  background-color: lightgreen;
+  width: 80%;
+  margin: 3px;
+  aspect-ratio: 4/1;
+}
+</style>
+</head>
+<body>
+
+<h3>CSS overflow-anchor property value 'none'.</h3>
+<p>Scroll down, click the button, and see how the new boxes created above pushes the text down.</p>
+<p>Change 'overflow-anchor' property value to 'auto', click 'Run', scroll down, click button, and see how the text now keeps its place in view, even as new boxes are created above.</p>
+
+<div id="container">
+  <div id="newBoxes"></div>
+  <h4>Scroll down to button, then click it</h4>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <button onclick="addBox()">Click me</button>
+  
+</div>
+
+<script>
+  function addBox(){
+    let newBoxesDiv = document.querySelector("#newBoxes");
+    let newDiv = document.createElement("div");
+    newDiv.className = "greenDiv";
+    newBoxesDiv.appendChild(newDiv);
+  }
+</script>
 </body>
