@@ -1,0 +1,25 @@
+Version 0.0.1
+<h2 align=center>T3A07 Decisions by Manvir</h2>
+<as href="https://www.w3schools.com/js/js_if_else.asp">Good reference to decisions if ... else statements.
+Javascript innerHTML value by Manvir</a><br>
+Note: !=Not, &&=And,   =or <br>
+<h4> Example Input Output Code</h4>
+<pre>
+let myHour = 20
+if (myHour < 18) {
+let myGreeting = 'Good day';
+}
+</pre>
+<h4>Example Working Code</h4>
+<input id= "myNum01" type=number value="4"> <br>
+<input type=button value"simple if statement for decision making" onclick="{let myIn01 = parseFloat(document.getElementById('myNum01').value)
+if (myIn01>= 3){
+document.getElementById('myDiv01').innerHTML =myIn01 = ' is greater than 3'
+}
+}">
+<input type=button value="if...else" onclick"{
+let myIn01 = parseFloat(document.getElementById('myNum01').value)
+if (myIn01 >= 3){
+document.getElement.Id('myDiv01').innerhtml= myIn01 = 'is greater than 3'
+} else {
+document.getElement.Id('myDiv01').innerhtml= myIn01 = 'is less than 3'
