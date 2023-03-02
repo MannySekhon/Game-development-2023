@@ -1,4 +1,4 @@
-Version 0.1.0
+Version 0.1.1
 <h2 align=center›T3A05-input output by Manvir</h2)
 <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp">Good reference to input output
 Javascript innerHTML value by Manvir</a>
@@ -19,3 +19,25 @@ myIn01 + ' squared = ' + myAnswer
 <div id="myDiv0l">...</div>
 <br>
 <body style="background-color:powderblue;">
+
+  
+  
+  
+  <input id="myButton123" type="button" value="Input / Output" onclick="{
+      document.getElementById('myDiv123').innerHTML = document.getElementById('myTextIn01').value // note: use value not innerHTML                                                    
+}"><br><br>
+
+<div id='myDiv123'>Inputs and output = Information coming in and out of the program.</div><br>
+<input type="text" id="myTextIn1" value="3.45" size="30">  + <input type="text" id="myTextIn2" value="6.78" size="30"> 
+
+<input id="myButton124" type="button" value="Add the numbers" onclick="{
+   var my1 = document.getElementById('myTextIn1').value  
+   var my2 = document.getElementById('myTextIn2').value  
+   document.getElementById('myDiv124').innerHTML =   'Numbers added as strings ' +  my1 + ' + ' +  my2 + ' = ' +  (my1 + my2)  + '<br>'   
+   document.getElementById('myDiv124').innerHTML +=  'Numbers added as integers ' +  my1 + ' + ' +  my2 + ' = ' +  (parseInt(my1) + parseInt(my2))  + '<br>'   
+   document.getElementById('myDiv124').innerHTML +=  'Numbers added as rounded integers ' +  my1 + ' + ' +  my2 + ' = ' +  (Math.round(my1) + Math.round(my2))  + '<br>'                                                      
+   document.getElementById('myDiv124').innerHTML +=  'Numbers added as floating point (decimal) numbers ' +  my1 + ' + ' +  my2 + ' = ' +  (parseFloat(my1) + parseFloat(my2))  + '<br>'                                         
+   document.getElementById('myDiv124').innerHTML +=  'Numbers added using *1 trick ' +  my1 + ' + ' +  my2 + ' = ' +  (my1*1 + my2*1)  + '<br>'                                                       
+                                                             
+                                                              
+}"><br><br>
