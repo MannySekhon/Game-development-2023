@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Car Game</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="500" height="500"></canvas>
+    <script>
+      const canvas = document.getElementById("gameCanvas");
+      const ctx = canvas.getContext("2d");
+
+      // Create the car object
+      const car = {
+        x: 100,
+        y: 400,
+        width: 50,
+        height: 100,
+        speed: 5,
+      };
+
+      // Draw the car on the canvas
+      function drawCar() {
+        ctx.fillStyle = "red";
+        ctx.fillRect(car.x, car.y, car.width, car.height);
+      }
+
+      // Update the car position based on the arrow key pressed
+      function moveCar(event) {
+        if (event.keyCode === 37) { // Left arrow
+          car.x -= car.speed;
+        } else if (event.keyCode === 39) { // Right arrow
+          car.x += car.speed;
+        }
+
+        // Redraw the car on the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawCar();
+      }
+
+      // Attach the moveCar function to the keydown event
+      document.addEventListener("keydown", moveCar);
+      
+      // Draw the initial car on the canvas
+      drawCar();
+    </script>
+  </body>
+</html>
