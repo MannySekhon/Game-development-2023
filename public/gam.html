@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Racing Game</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: gray;
+			overflow: hidden;
+		}
+		#player {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 50px;
+			height: 80px;
+			background-color: red;
+		}
+		.car {
+			position: absolute;
+			top: -100px;
+			width: 50px;
+			height: 80px;
+			background-color: blue;
+			animation: moveCar linear 3s infinite;
+		}
+		#car1 {
+			left: 25%;
+			animation-delay: 0s;
+		}
+		#car2 {
+			left: 50%;
+			animation-delay: 1s;
+		}
+		#car3 {
+			left: 75%;
+			animation-delay: 2s;
+		}
+		@keyframes moveCar {
+			from {
+				top: -100px;
+			}
+			to {
+				top: 100vh;
+			}
+		}
+		#finish-line {
+			position: absolute;
+			top: -50px;
+			width: 100%;
+			height: 50px;
+			background-color: white;
+			border-bottom: 5px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div id="player"></div>
+	<div id="car1" class="car"></div>
+	<div id="car2" class="car"></div>
+	<div id="car3" class="car"></div>
+	<div id="finish-line"></div>
+
+	<script>
+		let player = document.getElementById('player');
+		let car1 = document.getElementById('car1');
+		let car2 = document.getElementById('car2');
+		let car3 = document.getElementById('car3');
+		let finishLine = document.getElementById('finish-line');
+
+		let playerPos = 50;
+		let car1Pos = -100;
+		let car2Pos = -300;
+		let car3Pos = -500;
+		let speed = 10;
+		let gameLoop;
+
+		function movePlayer(event) {
+			if (event.keyCode == 37) {
+				playerPos -= 10;
+			} else if (event.keyCode == 39) {
+				playerPos += 10;
+			}
+			player.style.left = playerPos + 'px';
+		}
+
+		function moveCars() {
+			car1Pos += speed;
+			car2Pos += speed;
+			car3Pos += speed;
+			car1.style.top = car1Pos + 'px';
+			car2.style.top = car2Pos + 'px';
+			car3.style.top = car3Pos + 'px';
+
+			if (car1Pos >= window.innerHeight) {
+				car1Pos = -100;
+			}
+			if (car2Pos >= window.innerHeight) {
+				car2Pos = -100;
+			}
+			if (car3Pos >= window.innerHeight) {
+				car3Pos = -100;
+			}
+
+			if (checkCollision()) {
+				endGame();
+			}
+			if (playerPos >=
