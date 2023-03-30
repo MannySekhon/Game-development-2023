@@ -1,22 +1,38 @@
-Version 0.0.7
+Version 0.0.8
 <h2 align=center>t3a06 variables by Manvir.html</h2>
 <br>
 Other Languages use: bool, int, float, char, string, int_8, int_16 etc<br>
 Note: Javascript does use var and let for local variables.<br>
 For Global variables Mr. Ellis prefers to use document.myVarName
-<h4> Example input output code</h4> <pre>
+
+<h4> Example input output code</h4>
+<pre>
 let myin01 = document.getElementById('myText01').value
-document.getElementById('myDiv01').innerHTML = myIn01
+if (myin01 == '') {
+    document.getElementById('myDiv01').innerHTML = 'Please enter a value'
+} else {
+    document.getElementById('myDiv01').innerHTML = myin01
+}
 </pre>
+
 <h4> Example working code </h4>
 <input id="myText01" type=text value="How are you?"> <br>
 <input type=button value="Show Variable" onclick="{
 let myIn01 = document.getElementById('myText01').value
-document.getElementById('myDiv01').innerHTML= myIn01
+if (myIn01 == '') {
+    document.getElementById('myDiv01').innerHTML = 'Please enter a value'
+} else {
+    document.getElementById('myDiv01').innerHTML= myIn01
+}
 }"> <br>
 <input type=button value="Using no Variable" onclick="{
-document.getElementById('myDiv01').innerHTML =
-document.getElementById('myText01').value
+let myIn01 = document.getElementById('myText01').value
+if (myIn01 == '') {
+    document.getElementById('myDiv01').innerHTML = 'Please enter a value'
+} else {
+    document.getElementById('myDiv01').innerHTML =
+    document.getElementById('myText01').value
+}
 }"> <br>
 <div id="myDiv01">...</div>
 
