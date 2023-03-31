@@ -9,6 +9,8 @@
       myTemp = myString[myLoop]
       if (myString[myLoop] == 'e') {myTemp  = 's'} 
       if (myString[myLoop] == 'h') {myTemp  = 'm'} 
+      if (myString[myLoop] == 'a') {myTemp  = 'l'} 
+      if (myString[myLoop] == 'i') {myTemp  = 'z'} 
       myString[myLoop] = myTemp
    }
    document.getElementById('myArea02').value = myString.join('')
@@ -35,6 +37,8 @@
       myTemp = myString[myLoop]
       if (myString[myLoop] == 's') {myTemp  = 'e'} 
       if (myString[myLoop] == 'm') {myTemp  = 'h'} 
+      if (myString[myLoop] == 'l') {myTemp  = 'a'} 
+      if (myString[myLoop] == 'z') {myTemp  = 'i'} 
       myString[myLoop] = myTemp
    }
    document.getElementById('myArea03').value = myString.join('')
