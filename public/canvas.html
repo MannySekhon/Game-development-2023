@@ -1,36 +1,78 @@
-<h2 align=center>t2a08-canvas by Fred</h2>
-
-<div class="button-group">
-  <h3>Drawing Tools</h3>
-  <div class="button-row">
-    <button class="drawing-button" data-command=".lineTo(30,200)">Draw Line</button>
-    <button class="drawing-button" data-command=".arc(95, 50, 40, 0, 2 * Math.PI)">Draw Circle</button>
-    <button class="drawing-button" data-command=".quadraticCurveTo(100,220,240,110)">Draw Curve</button>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>t2a08-canvas by Manvir</title>
+</head>
+<body>
+  <h2 align="center">t2a08-canvas by Manvir</h2>
+  
+  <div class="button-group">
+    <h3>Drawing Tools</h3>
+    <div class="button-row">
+      <button class="drawing-button" data-command=".lineTo(30,200)">Draw Line</button>
+      <button class="drawing-button" data-command=".arc(95, 50, 40, 0, 2 * Math.PI)">Draw Circle</button>
+      <button class="drawing-button" data-command=".quadraticCurveTo(100,220,240,110)">Draw Curve</button>
+    </div>
   </div>
-</div>
 
-<div class="button-group">
-  <h3>Text Tools</h3>
-  <div class="button-row">
-    <button class="drawing-button" data-command=".fillText('Hello World', 400, 100)">Add Text</button>
+  <div class="button-group">
+    <h3>Text Tools</h3>
+    <div class="button-row">
+      <button class="drawing-button" data-command=".fillText('Hello World', 400, 100)">Add Text</button>
+    </div>
   </div>
-</div>
 
-<div class="button-group">
-  <h3>Color Tools</h3>
-  <div class="button-row">
-    <button class="color-button" data-command=".createLinearGradient(100, 300, 200, 400)">Gradient Fill</button>
-    <button class="color-button" data-command=".fillStyle = 'red'">Red Fill</button>
-    <button class="color-button" data-command=".fillStyle = 'blue'">Blue Fill</button>
+  <div class="button-group">
+    <h3>Color Tools</h3>
+    <div class="button-row">
+      <button class="color-button" data-command=".createLinearGradient(100, 300, 200, 400)">Gradient Fill</button>
+      <button class="color-button" data-command=".fillStyle = 'red'">Red Fill</button>
+      <button class="color-button" data-command=".fillStyle = 'blue'">Blue Fill</button>
+    </div>
   </div>
-</div>
 
-<div class="button-group">
-  <h3>Clear Tools</h3>
-  <div class="button-row">
-    <button class="clear-button" data-command="clearRect(20, 20, 50, 50)">Clear Square</button>
-    <button class="clear-button" data-command="myContext.clearRect(0, 0, myCanvas.width, myCanvas.height)">Clear All</button>
+  <div class="button-group">
+    <h3>Clear Tools</h3>
+    <div class="button-row">
+      <button class="clear-button" data-command="clearRect(20, 20, 50, 50)">Clear Square</button>
+      <button class="clear-button" data-command="myContext.clearRect(0, 0, myCanvas.width, myCanvas.height)">Clear All</button>
+    </div>
   </div>
-</div>
 
-<canvas id="myCoolTag" width="1000" height="600" style="border:1px solid #000000;" alt="Drawing canvas"></canvas>
+  <canvas id="myCoolTag" width="1000" height="600" style="border:1px solid #000000;" alt="Drawing canvas"></canvas>
+
+  <script>
+    // get the canvas and context
+    let myCanvas = document.getElementById('myCoolTag');
+    let myContext = myCanvas.getContext('2d');
+
+    // add event listeners to the buttons
+    let drawingButtons = document.getElementsByClassName('drawing-button');
+    for (let button of drawingButtons) {
+      button.addEventListener('click', function() {
+        let command = this.dataset.command;
+        eval("myContext.beginPath(); myContext." + command + "; myContext.stroke();");
+      });
+    }
+
+    let textButtons = document.getElementsByClassName('text-button');
+    for (let button of textButtons) {
+      button.addEventListener('click', function() {
+        let command = this.dataset.command;
+        eval("myContext.font = '20px Arial'; myContext." + command + "; myContext.stroke();");
+      });
+    }
+
+    let colorButtons = document.getElementsByClassName('color-button');
+    for (let button of colorButtons) {
+      button.addEventListener('click', function() {
+        let command = this.dataset.command;
+        eval("myContext." + command + ";");
+      });
+    }
+
+    let clearButtons = document.getElementsByClassName('clear-button');
+    for (let button of clearButtons) {
+      button.addEventListener('click', function() {
+        let command = this.dataset.command;
+        eval
