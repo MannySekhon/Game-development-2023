@@ -28,3 +28,16 @@
 <input type=button value="Image Down" onclick="{
   document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) + 10 + 'px'
 }">
+
+   
+   
+   <input type="button" value="Move Up" onclick="moveImageUp()">
+
+<script>
+  function moveImageUp() {
+    let image = document.getElementById('myImage01');
+    let currentPosition = parseInt(image.style.top);
+    let newPosition = currentPosition - 10;
+    image.style.top = newPosition + 'px';
+  }
+</script>
