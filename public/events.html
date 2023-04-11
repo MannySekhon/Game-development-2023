@@ -21,7 +21,33 @@ Events are HTML code that activates Javascript code
 }"> This is bold</b>
 <br>
 You do at least 8 other events: <br>
-onClick, onDbClick, onChange, onBlue, onFocus, onMouseMove, onTouch, onKeyDown, onKeyPress, onDragStart, onTouchStant, onTouchEnd, onTouchMove
+onClick, onDbClick, onChange, onBlue, onFocus, onMouseMove, onTouch, onKeyDown, onKeyPress, onDragStart, onTouchStant, onTouchEnd, onTouchMove <br>
 
 
 <input type="text" id="myInput" onchange="updateValue()">
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Using onblur Attribute</title>
+</head>
+<body>
+	<label for="myInput">Enter a number:</label>
+	<input type="text" id="myInput" onblur="validateInput()">
+	<p id="error"></p>
+	<script>
+		function validateInput() {
+			var input = document.getElementById("myInput").value;
+			if (isNaN(input)) {
+				document.getElementById("error").innerHTML = "Please enter a valid number.";
+			} else {
+				document.getElementById("error").innerHTML = "";
+			}
+		}
+	</script>
+</body>
+</html>
+
