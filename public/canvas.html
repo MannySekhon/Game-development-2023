@@ -105,6 +105,51 @@ myContext.fill();
    myContext.clearRect(20, 20, 50, 50);
 }">
 
+   
+   <input type=button value="Draw BMW Logo" onclick="{
+   myContext.beginPath();
+   myContext.lineWidth = 10;
+   myContext.strokeStyle = 'blue';
+
+   // draw outer circle
+   myContext.arc(150, 150, 100, 0, 2 * Math.PI);
+   myContext.stroke();
+
+   // draw inner circle
+   myContext.beginPath();
+   myContext.arc(150, 150, 80, 0, 2 * Math.PI);
+   myContext.stroke();
+
+   // draw first set of lines
+   myContext.beginPath();
+   myContext.moveTo(110, 150);
+   myContext.lineTo(190, 150);
+   myContext.stroke();
+
+   myContext.beginPath();
+   myContext.moveTo(150, 110);
+   myContext.lineTo(150, 190);
+   myContext.stroke();
+
+   // draw second set of lines
+   myContext.beginPath();
+   myContext.moveTo(105, 130);
+   myContext.lineTo(195, 170);
+   myContext.stroke();
+
+   myContext.beginPath();
+   myContext.moveTo(195, 130);
+   myContext.lineTo(105, 170);
+   myContext.stroke();
+
+   // draw center circle
+   myContext.beginPath();
+   myContext.arc(150, 150, 20, 0, 2 * Math.PI);
+   myContext.fillStyle = 'blue';
+   myContext.fill();
+}">
+   
+   
 <input type=button value="Clear all" onclick="{
    myContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
 }"><br><br>
