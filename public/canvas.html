@@ -70,3 +70,66 @@
 </html>
 
  <body style="background-color:powderblue;">
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 // set up global variables
+let myCanvas = document.getElementById('myCoolTag');
+let myContext;
+
+if (myCanvas) {
+  myContext = myCanvas.getContext('2d');
+}
+
+// handle button clicks
+document.querySelectorAll('button').forEach(button => {
+  button.addEventListener('click', () => {
+    if (!myContext) {
+      console.error('myContext is not defined');
+      return;
+    }
+
+    switch (button.dataset.command) {
+      case '.lineTo(30,200)':
+        myContext.lineTo(30, 200);
+        break;
+      case '.arc(95, 50, 40, 0, 2 * Math.PI)':
+        myContext.arc(95, 50, 40, 0, 2 * Math.PI);
+        break;
+      case '.quadraticCurveTo(100,220,240,110)':
+        myContext.quadraticCurveTo(100, 220, 240, 110);
+        break;
+      case '.fillText(\'Hello World\', 400, 100)':
+        myContext.fillText('Hello World', 400, 100);
+        break;
+      case '.createLinearGradient(100, 300, 200, 400)':
+        myContext.fillStyle = myContext.createLinearGradient(100, 300, 200, 400);
+        myContext.fillRect(0, 0, myCanvas.width, myCanvas.height);
+        break;
+      case '.fillStyle = \'red\'':
+        myContext.fillStyle = 'red';
+        myContext.fillRect(0, 0, myCanvas.width, myCanvas.height);
+        break;
+      case '.fillStyle = \'blue\'':
+        myContext.fillStyle = 'blue';
+        myContext.fillRect(0, 0, myCanvas.width, myCanvas.height);
+        break;
+      case 'clearRect(20, 20, 50, 50)':
+        myContext.clearRect(20, 20, 50, 50);
+        break;
+      case 'myContext.clearRect(0, 0, myCanvas.width, myCanvas.height)':
+        myContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
+        break;
+      default:
+        console.error(`Invalid command: ${button.dataset.command}`);
+        break;
+    }
+  });
+});
+
