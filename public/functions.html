@@ -1,13 +1,13 @@
 <script>
-  function myExampleFunction(){
-let myIn01 = parseInt (document.getElementById('myText01').value)
-let mySum = myIn01 + myIn01
-let myReply = myIn01 + ' + ' + myIn01 + ' = ' + mySum
-return myReply
-  }
-  
+function myExampleFunction(){
+  let myIn01 = parseInt(document.getElementById('myText01').value);
+  let mySum = myIn01 + myIn01;
+  let myProduct = myIn01 * myIn01; // added multiplication here
+  let myReply = myIn01 + ' + ' + myIn01 + ' = ' + mySum + '<br>' + myIn01 + ' * ' + myIn01 + ' = ' + myProduct; // updated myReply to include multiplication
+  return myReply;
+}
 </script>
-Version 0.0.4
+Version 0.0.5
 <h2 align center>functions-by-Manvir.html</h2>
 <a href="https://www.w3schools.com/js/js_functions.asp">
    Good reference to Javascript functions</a><br>
@@ -18,11 +18,9 @@ function myGrabNumber(){
   return parseInt(document.getElementById('myText01').value);
 }
 </pre>
-
 <h4> Example working code</h4>
-
 <input type="text" id="myText01" value="3"><br>
 <input type="button" value="Function Example" onClick="{
-  document.getElementById('myDiv01').innerHTML = myExampleFunction();
+document.getElementById('myDiv01').innerHTML = myExampleFunction();
 }">
-<div id="myDiv01">...</div>
+<div id="myDiv01">...</div> 
