@@ -1,4 +1,4 @@
-Version 0.0.8
+Version 0.0.9
 <h2 align="center">Events-by-Manvir</h2>
 <a href="https://way2tutorial.com/html/html5_events_handler_list.php">Good reference to HTML Events</a><br>
 Events are HTML code that activates Javascript code
@@ -21,7 +21,7 @@ Events are HTML code that activates Javascript code
 }"> This is bold</b>
 <br>
 You do at least 8 other events: <br>
-onClick, onDbClick, onChange, onBlue, onFocus, onMouseMove, onTouch, onKeyDown, onKeyPress, onDragStart, onTouchStant, onTouchEnd, onTouchMove <br>
+onClick, onDbClick, onChange, onBlur, onFocus, onMouseMove, onTouch, onKeyDown, onKeyPress, onDragStart, onTouchStart, onTouchEnd, onTouchMove <br>
 
 
 <input type="text" id="myInput" onchange="updateValue()"> <br>
@@ -81,4 +81,60 @@ Hover your cursor over this box <br>
 	</script>
 </head>
 <body>
-	<div id="element" onMouseMove="changeColor(event)"></div>
+	<div id="element" onMouseMove="changeColor(event)"></div> <br><br><br>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<style>
+		.dropdown {
+			position: relative;
+			display: inline-block;
+			margin-right: 10px;
+		}
+		
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #f1f1f1;
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+		}
+		
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+		
+		.dropdown-item {
+			padding: 12px 16px;
+			cursor: pointer;
+		}
+		
+		.dropdown-item:hover {
+			background-color: #ddd;
+		}
+	</style>
+	<script>
+		function hideDropdown(event) {
+			// Hide the dropdown content when it loses focus
+			event.target.nextElementSibling.style.display = "none";
+		}
+	</script>
+</head>
+<body>
+	<div class="dropdown" onblur="hideDropdown(event)">
+		<button class="dropdown-btn">Menu</button>
+		<div class="dropdown-content">
+			<div class="dropdown-item">Item 1</div>
+			<div class="dropdown-item">Item 2</div>
+			<div class="dropdown-item">Item 3</div>
+		</div>
+	</div>
+	<p>Click outside the dropdown menu to hide it.</p>
+</body>
