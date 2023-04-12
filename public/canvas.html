@@ -1,136 +1,75 @@
-Version 0.0.4
 <!DOCTYPE html>
+Version 0.0.5
 <html>
 <head>
-	<title>canvas by Manvir</title>
-	<style>
-		.button-group {
-			margin-bottom: 10px;
-		}
-		.button-group h3 {
-			margin-top: 0;
-		}
-		.button-row {
-			display: flex;
-			flex-wrap: wrap;
-		}
-		.button-row button {
-			margin: 5px;
-		}
-	</style>
+    <title>canvas by Manvir</title>
+    <style>
+        .button-group {
+            margin-bottom: 10px;
+        }
+        .button-group h3 {
+            margin-top: 0;
+        }
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .button-row button {
+            margin: 5px;
+        }
+    </style>
 </head>
-<body>
-	<div class="button-group">
-		<h3>Drawing Tools</h3>
-		<div class="button-row">
-			<button class="drawing-button" data-command=".lineTo(30,200)">Draw Line</button>
-			<button class="drawing-button" data-command=".arc(95, 50, 40, 0, 2 * Math.PI)">Draw Circle</button>
-			<button class="drawing-button" data-command=".quadraticCurveTo(100,220,240,110)">Draw Curve</button>
-		</div>
-	</div>
+<body style="background-color:powderblue;">
+    <div class="button-group">
+        <h3>Drawing Tools</h3>
+        <div class="button-row">
+            <button class="drawing-button" data-command="lineTo(30,200)">Draw Line</button>
+            <button class="drawing-button" data-command="arc(95, 50, 40, 0, 2 * Math.PI)">Draw Circle</button>
+            <button class="drawing-button" data-command="quadraticCurveTo(100,220,240,110)">Draw Curve</button>
+        </div>
+    </div>
 
-	<div class="button-group">
-		<h3>Text Tools</h3>
-		<div class="button-row">
-			<button class="drawing-button" data-command=".fillText('Hello World', 400, 100)">Add Text</button>
-		</div>
-	</div>
+    <div class="button-group">
+        <h3>Text Tools</h3>
+        <div class="button-row">
+            <button class="drawing-button" data-command="fillText('Hello World', 400, 100)">Add Text</button>
+        </div>
+    </div>
 
-	<div class="button-group">
-		<h3>Color Tools</h3>
-		<div class="button-row">
-			<button class="color-button" data-command=".createLinearGradient(100, 300, 200, 400)">Gradient Fill</button>
-			<button class="color-button" data-command=".fillStyle = 'red'">Red Fill</button>
-			<button class="color-button" data-command=".fillStyle = 'blue'">Blue Fill</button>
-		</div>
-	</div>
+    <div class="button-group">
+        <h3>Color Tools</h3>
+        <div class="button-row">
+            <button class="color-button" data-command="createLinearGradient(100, 300, 200, 400)">Gradient Fill</button>
+            <button class="color-button" data-command="fillStyle = 'red'">Red Fill</button>
+            <button class="color-button" data-command="fillStyle = 'blue'">Blue Fill</button>
+        </div>
+    </div>
 
-	<div class="button-group">
-		<h3>Clear Tools</h3>
-		<div class="button-row">
-			<button class="clear-button" data-command="clearRect(20, 20, 50, 50)">Clear Square</button>
-			<button class="clear-button" data-command="myContext.clearRect(0, 0, myCanvas.width, myCanvas.height)">Clear All</button>
-		</div>
-	</div>
+    <div class="button-group">
+        <h3>Clear Tools</h3>
+        <div class="button-row">
+            <button class="clear-button" data-command="clearRect(20, 20, 50, 50)">Clear Square</button>
+            <button class="clear-button" data-command="clear">Clear All</button>
+        </div>
+    </div>
 
-	<canvas id="myCoolTag" width="1000" height="600" style="border:1px solid #000000;"></canvas>
+    <canvas id="myCoolTag" width="1000" height="600" style="border:1px solid #000000;"></canvas>
 
-	<script>
-		// set up global variables
-		let myCanvas = document.getElementById('myCoolTag');
-		let myContext = myCanvas.getContext('2d');
+    <script>
+        // set up global variables
+        let myCanvas = document.getElementById('myCoolTag');
+        let myContext = myCanvas.getContext('2d');
 
-		// handle button clicks
-		document.querySelectorAll('button').forEach(button => {
-			button.addEventListener('click', () => {
-				eval(`myContext.${button.dataset.command}`);
-			});
-		});
-	</script>
+        // handle button clicks
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                if (button.dataset.command === "clear") {
+                    myContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
+                } else {
+                    myContext[button.dataset.command]();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
- <body style="background-color:powderblue;">
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 <script>
-	 // set up global variables
-let myCanvas = document.getElementById('myCoolTag');
-let myContext;
-
-if (myCanvas) {
-  myContext = myCanvas.getContext('2d');
-}
-
-// handle button clicks
-document.querySelectorAll('button').forEach(button => {
-  button.addEventListener('click', () => {
-    if (!myContext) {
-      console.error('myContext is not defined');
-      return;
-    }
-
-    switch (button.dataset.command) {
-      case '.lineTo(30,200)':
-        myContext.lineTo(30, 200);
-        break;
-      case '.arc(95, 50, 40, 0, 2 * Math.PI)':
-        myContext.arc(95, 50, 40, 0, 2 * Math.PI);
-        break;
-      case '.quadraticCurveTo(100,220,240,110)':
-        myContext.quadraticCurveTo(100, 220, 240, 110);
-        break;
-      case '.fillText(\'Hello World\', 400, 100)':
-        myContext.fillText('Hello World', 400, 100);
-        break;
-      case '.createLinearGradient(100, 300, 200, 400)':
-        myContext.fillStyle = myContext.createLinearGradient(100, 300, 200, 400);
-        myContext.fillRect(0, 0, myCanvas.width, myCanvas.height);
-        break;
-      case '.fillStyle = \'red\'':
-        myContext.fillStyle = 'red';
-        myContext.fillRect(0, 0, myCanvas.width, myCanvas.height);
-        break;
-      case '.fillStyle = \'blue\'':
-        myContext.fillStyle = 'blue';
-        myContext.fillRect(0, 0, myCanvas.width, myCanvas.height);
-        break;
-      case 'clearRect(20, 20, 50, 50)':
-        myContext.clearRect(20, 20, 50, 50);
-        break;
-      case 'myContext.clearRect(0, 0, myCanvas.width, myCanvas.height)':
-        myContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
-        break;
-      default:
-        console.error(`Invalid command: ${button.dataset.command}`);
-        break;
-    }
-  });
-});
-	 </script>
