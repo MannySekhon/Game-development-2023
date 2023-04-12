@@ -1,4 +1,4 @@
-Version 0.0.9
+Version 0.0.10
 <h2 align="center">Events-by-Manvir</h2>
 <a href="https://way2tutorial.com/html/html5_events_handler_list.php">Good reference to HTML Events</a><br>
 Events are HTML code that activates Javascript code
@@ -137,4 +137,43 @@ Hover your cursor over this box <br>
 		</div>
 	</div>
 	<p>Click outside the dropdown menu to hide it.</p>
+</body> <br><br><br>
+	
+	<head>
+		<style>
+		.box {
+			width: 100px;
+			height: 100px;
+			background-color: #ccc;
+			border: 2px solid #333;
+			border-radius: 5px;
+			margin: 10px;
+		}
+		
+		.drag-image {
+			width: 50px;
+			height: 50px;
+			background-color: #f00;
+			border: 2px solid #333;
+			border-radius: 5px;
+			box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+		}
+	</style>
+	<script>
+		function dragStart(event) {
+			// Set the data to be transferred during the drag-and-drop operation
+			event.dataTransfer.setData("text/plain", event.target.id);
+			
+			// Set the drag image to be used during the drag-and-drop operation
+			var dragImage = document.createElement("div");
+			dragImage.className = "drag-image";
+			event.dataTransfer.setDragImage(dragImage, 25, 25);
+		}
+	</script>
+</head>
+<body>
+	<div id="box1" class="box" draggable="true" ondragstart="dragStart(event)"></div>
+	<div id="box2" class="box" draggable="true" ondragstart="dragStart(event)"></div>
+	<div id="box3" class="box" draggable="true" ondragstart="dragStart(event)"></div>
+	<p>Drag the boxes to rearrange them.</p>
 </body>
