@@ -1,4 +1,4 @@
-Version 0.0.6
+Version 0.0.7
 <h2 align="center">Events-by-Manvir</h2>
 <a href="https://way2tutorial.com/html/html5_events_handler_list.php">Good reference to HTML Events</a><br>
 Events are HTML code that activates Javascript code
@@ -55,5 +55,29 @@ onClick, onDbClick, onChange, onBlue, onFocus, onMouseMove, onTouch, onKeyDown, 
 			alert("You pressed a key!");
 		}
 	</script>
-	<input type="text" onkeypress="showAlert()">
+	<input type="text" onkeypress="showAlert()"> <br>
+
+
+
+
+
+  <script>
+    function handleMouseMove(event) {
+      // Get the x and y coordinates of the mouse
+      var x = event.clientX;
+      var y = event.clientY;
+      
+      // Update the position of an element on the page
+      document.getElementById("element").style.left = x + "px";
+      document.getElementById("element").style.top = y + "px";
+    }
+  </script>
+  <style>
+    #element {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: red;
+    }
+  </style>
 
