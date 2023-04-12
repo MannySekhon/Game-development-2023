@@ -1,4 +1,4 @@
-Version 0.0.7
+Version 0.0.8
 <h2 align="center">Events-by-Manvir</h2>
 <a href="https://way2tutorial.com/html/html5_events_handler_list.php">Good reference to HTML Events</a><br>
 Events are HTML code that activates Javascript code
@@ -60,24 +60,25 @@ onClick, onDbClick, onChange, onBlue, onFocus, onMouseMove, onTouch, onKeyDown, 
 
 
 
-
-  <script>
-    function handleMouseMove(event) {
-      // Get the x and y coordinates of the mouse
-      var x = event.clientX;
-      var y = event.clientY;
-      
-      // Update the position of an element on the page
-      document.getElementById("element").style.left = x + "px";
-      document.getElementById("element").style.top = y + "px";
-    }
-  </script>
-  <style>
-    #element {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      background-color: red;
-    }
-  </style>
-
+<html>
+<head>
+<style>
+		#element {
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			transition: background-color 0.5s ease-in-out;
+		}
+	</style>
+	<script>
+		function changeColor(event) {
+			// Get a random color value
+			var color = "#" + Math.floor(Math.random()*16777215).toString(16);
+			
+			// Set the background color of the element
+			event.target.style.backgroundColor = color;
+		}
+	</script>
+</head>
+<body>
+	<div id="element" onMouseMove="changeColor(event)"></div>
