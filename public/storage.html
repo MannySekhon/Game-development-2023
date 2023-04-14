@@ -35,3 +35,28 @@ Text example: <input id="myText1" type=text size=70 value="" placeholder="Write 
       document.getElementById('storedText').innerHTML = 'The following text is stored: ' + myStorage;
    }
 </script>
+
+   
+   
+   
+   
+   
+   
+   <h2>Stored Text 1:</h2>
+<p id="storedText1"></p>
+<script>
+   var myStorage1 = localStorage.getItem('myStoredText1');
+   if (myStorage1 != null) {
+      document.getElementById('myText1').value = myStorage1;
+      document.getElementById('storedText1').innerHTML = 'The following text is stored: ' + myStorage1;
+   }
+</script>
+<h2>Stored Text 2:</h2>
+<p id="storedText2"></p>
+<script>
+   var myStorage2 = localStorage.getItem('myStoredText2');
+   if (myStorage2 != null) {
+      document.getElementById('myText2').value = myStorage2;
+      document.getElementById('storedText2').innerHTML = 'The following text is stored: ' + myStorage2;
+   }
+</script>
