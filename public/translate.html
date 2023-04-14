@@ -3,22 +3,22 @@
 
 <script>
     function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,fr,de,ru', layout:google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
-
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,fr,de,ru,es,ja',
+            layout:google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+        }, 'google_translate_element');
     }
 </script>
-
-
 
 <h1 align=center>t2a10-translate-name</h1>
 
 <div id="google_translate_element">I really like javascript</div>
 
-
-<input  type="button" value="initilize speak" onclick="{  
+<input type="button" value="initialize speak" onclick="{  
    let myVoice = 'Russian Female'
    responsiveVoice.speak(document.getElementById('google_translate_element').innerText, myVoice, {pitch: 1, rate: 1, volume : 1})                                              
 }"><br><br>
-
 
  <body style="background-color:powderblue;">
