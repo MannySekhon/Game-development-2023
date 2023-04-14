@@ -22,3 +22,40 @@
 }"><br><br>
 
  <body style="background-color:powderblue;">
+
+     
+     <h1 align=center>t2a10-translate-name</h1>
+
+<div>
+  <label for="inputText">Enter text:</label>
+  <input type="text" id="inputText">
+</div>
+
+<div>
+  <input type="button" value="Translate" onclick="translate()">
+</div>
+
+<div>
+  <label for="translatedText">Translated text:</label>
+  <div id="translatedText"></div>
+</div>
+
+<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,fr,de,ru', layout:google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+  }
+
+  function translate() {
+    let inputText = document.getElementById('inputText').value;
+    let translatedText = document.getElementById('translatedText');
+
+    let translator = new google.translate.TranslateElement({pageLanguage: 'en'}, 'dummy');
+    translator.translate(inputText, function(result) {
+      translatedText.innerHTML = result;
+      responsiveVoice.speak(result, 'Russian Female', {pitch: 1, rate: 1, volume: 1});
+    });
+  }
+</script>
