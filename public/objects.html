@@ -23,18 +23,17 @@ Store these Items in a Javascript object<br>
     "firstName": "Michael",
     "lastName": "Jordan",
     "age": 60,
-    "eyeColor": "Brown"
+    "eyeColor": "Brown",
     "netWorth": "2-Billion"
 }
 </textarea><br> 
 
 <input id="myButton128" type="button" value="Store as an object" onclick="{
     var myPerson = JSON.parse(document.getElementById('myTextAreaObject').value);
-    document.getElementById('myDiv128').innerHTML = 'Name: ' + myPerson.firstName + ' ' + myPerson.lastName + ', Age: ' + myPerson.age + ', EyeColor: ' + myPerson.eyeColor + '<br>';
+    document.getElementById('myDiv128').innerHTML = 'Name: ' + myPerson.firstName + ' ' + myPerson.lastName + ', Age: ' + myPerson.age + ', EyeColor: ' + myPerson.eyeColor + ', Net Worth: ' + myPerson.netWorth + '<br>';
 }"><br><br>
 
 <div id="myDiv128"></div><br><br>
-
 
 
 <body style="background-color:powderblue;">
