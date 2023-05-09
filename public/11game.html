@@ -7,7 +7,8 @@
 <script>
 
    // global variables here
-   let myClock
+let myGlobalX = 0
+let myClock
 
 
    // global functions here
@@ -115,15 +116,3 @@ function myCheckHit(){
 	
 	
 	
-
-    let myTempX = 0;
-clearInterval(myClock);
-myClock = setInterval(function() {
-    myTempX -= 5;
-    let myTemp = myTempX + 'px 0px';
-    document.getElementById('myBody').style.backgroundPosition = myTemp;
-
-    // Update the position of the hands along with the background movement
-    let handLeft = parseInt(document.getElementById('myImg01').style.left) - 5 + 'px';
-    document.getElementById('myImg01').style.left = handLeft;
-}, 100);
