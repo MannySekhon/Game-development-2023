@@ -119,3 +119,60 @@ function myCheckHit(){
 </audio>
 
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<head>
+<style>
+#myImg01 {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  left: 50px;
+  top: 190px;
+}
+</style>
+</head>
+<body>
+
+<img id="myImg01" src="https://i.redd.it/nmd3itfu8dg61.png">
+
+<script>
+// Set the initial position and velocity variables
+var positionY = 190;
+var velocityY = 0;
+
+// Define the gravity force
+var gravity = 0.5;
+
+// Define the function to update the image position
+function updatePosition() {
+  // Apply gravity to the velocity
+  velocityY += gravity;
+
+  // Update the position based on the velocity
+  positionY += velocityY;
+
+  // Set the new position of the image
+  document.getElementById("myImg01").style.top = positionY + "px";
+
+  // Request the next animation frame
+  requestAnimationFrame(updatePosition);
+}
+
+// Call the updatePosition function to start the animation
+updatePosition();
+</script>
+
+</body>
+	
