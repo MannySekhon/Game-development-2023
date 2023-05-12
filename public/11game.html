@@ -30,23 +30,19 @@ function myHitOther(my1,my2){
 }
 
 
-function myCheckHit(){
 
-   if ( myHitOther('myImg01','myImg02') ){
-       //alert('you lose')
-      document.getElementById('myImg01').style.left = '20px'
-   }   
-   
-   if ( myHitOther('myImg01','myImg03') ){
-       //alert('you lose')
-      document.getElementById('myImg01').style.left = '20px'
-   }   
-   
+  function myCheckHit() {
+  if (myHitOther('myImg01', 'myImg02') || myHitOther('myImg01', 'myImg03') || myHitOther('myImg01', 'myImg04')) {
+    const pigElement = document.getElementById('myImg01');
+    pigElement.style.left = '50px';
+    pigElement.style.top = '190px';
+  }
+}
 
 
    // YOU WIN and go to next level!
 
-   if ( myHitOther('myImg01','myImg04') ){
+   if ( myHitOther('myImg01','myImg05') ){
        alert('You Win, now go to the next level')
       document.getElementById('myImg01').style.left = '20px'
       location = 'https://www.google.ca'
