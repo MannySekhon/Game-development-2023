@@ -132,7 +132,7 @@ function myCheckHit(){
 	
 	
 	
-	<head>
+<head>
 <style>
 #myImg01 {
   position: absolute;
@@ -150,7 +150,9 @@ function myCheckHit(){
 <script>
 // Set the initial position and velocity variables
 var positionY = 190;
+var positionX = 50;
 var velocityY = 0;
+var velocityX = 2; // Horizontal velocity
 
 // Define the gravity force (lower value for slower falling)
 var gravity = 0.2;
@@ -159,19 +161,22 @@ var jumpForce = -6;
 
 // Add event listener to detect clicks
 document.addEventListener('click', function() {
-  velocityY = jumpForce; // Apply jump force to the velocity
+  velocityY = jumpForce; // Apply jump force to the vertical velocity
+  positionX += velocityX; // Update the horizontal position
 });
 
 // Define the function to update the image position
 function updatePosition() {
-  // Apply gravity to the velocity
+  // Apply gravity to the vertical velocity
   velocityY += gravity;
 
-  // Update the position based on the velocity
+  // Update the position based on the velocities
   positionY += velocityY;
+  positionX += velocityX;
 
   // Set the new position of the image
   document.getElementById("myImg01").style.top = positionY + "px";
+  document.getElementById("myImg01").style.left = positionX + "px";
 
   // Request the next animation frame
   requestAnimationFrame(updatePosition);
@@ -182,4 +187,5 @@ updatePosition();
 </script>
 
 </body>
+
 
