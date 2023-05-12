@@ -152,8 +152,15 @@ function myCheckHit(){
 var positionY = 190;
 var velocityY = 0;
 
-// Define the gravity force
+// Define the gravity force (lower value for slower falling)
 var gravity = 0.2;
+// Define the jump force
+var jumpForce = -6;
+
+// Add event listener to detect clicks
+document.addEventListener('click', function() {
+  velocityY = jumpForce; // Apply jump force to the velocity
+});
 
 // Define the function to update the image position
 function updatePosition() {
@@ -175,4 +182,4 @@ updatePosition();
 </script>
 
 </body>
-	
+
