@@ -220,7 +220,6 @@ updatePosition();
 	
 	
 	
-	//checks hit and sends to start
 	
 	
 	<script>
@@ -230,7 +229,7 @@ let positionX = 50;
 let velocityY = 0;
 const velocityX = 2; // Horizontal velocity
 
-// Define the gravity force (lower value for slower falling)
+// Define the gravity force
 const gravity = 0.2;
 // Define the jump force
 const jumpForce = -6;
@@ -255,27 +254,13 @@ function updatePosition() {
   pigElement.style.top = positionY + "px";
   pigElement.style.left = positionX + "px";
 
-  // Check for collisions with hands
-  myCheckHit();
+
 
   // Request the next animation frame
   requestAnimationFrame(updatePosition);
 }
 
-// Function to check for collisions with hands
-function myCheckHit() {
-  const pigElement = document.getElementById("myImg01");
-  const pigRect = pigElement.getBoundingClientRect();
 
-  const hands = document.getElementsByClassName("hand");
-  for (let i = 0; i < hands.length; i++) {
-    const handRect = hands[i].getBoundingClientRect();
-    if (
-      pigRect.right >= handRect.left &&
-      pigRect.bottom >= handRect.top &&
-      pigRect.left <= handRect.right &&
-      pigRect.top <= handRect.bottom
-    ) {
       // Collision detected, reset pig position
       positionY = 190;
       positionX = 50;
