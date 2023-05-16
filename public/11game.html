@@ -29,7 +29,6 @@ var jumpForce = -6;
 document.addEventListener('click', function() {
   velocityY = jumpForce; // Apply jump force to the vertical velocity
   positionX += velocityX; // Update the horizontal position
-	alert()
 });
 
 
@@ -129,7 +128,13 @@ function myCheckHit() {
 <img id="myImg04" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/acb5cb15-636b-4bd5-a06e-a62420c5fb7f/db51m39-1ece9e18-5c73-470a-a528-186c44840e2a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjYjVjYjE1LTYzNmItNGJkNS1hMDZlLWE2MjQyMGM1ZmI3ZlwvZGI1MW0zOS0xZWNlOWUxOC01YzczLTQ3MGEtYTUyOC0xODZjNDQ4NDBlMmEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.LNEc-TMZCObqEF8noj35mqa6hCfZlma8p6xooxzPNWk" style="position:absolute; top:180; left:50%; transform: translateX(-40%);" alt="My Image">
 <img id="myImg05" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/acb5cb15-636b-4bd5-a06e-a62420c5fb7f/db51m39-1ece9e18-5c73-470a-a528-186c44840e2a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjYjVjYjE1LTYzNmItNGJkNS1hMDZlLWE2MjQyMGM1ZmI3ZlwvZGI1MW0zOS0xZWNlOWUxOC01YzczLTQ3MGEtYTUyOC0xODZjNDQ4NDBlMmEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.LNEc-TMZCObqEF8noj35mqa6hCfZlma8p6xooxzPNWk"  style="position:absolute; width:275px; height:400px; left:1000px; top:100px;">
 
-	
+
+
+<input type=button value=start onclick="{
+     updatePosition();
+}">
+  
+  
 <script>
 
 
