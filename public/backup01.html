@@ -1,0 +1,281 @@
+<body id="myBody" style="background-repeat:repeat; background-size: 120%" background="https://e0.pxfuel.com/wallpapers/272/503/desktop-wallpaper-forest-fog-bw-trees-dark-dual-wide-background-black-fog.jpg">
+
+<h1 align=center><font color=red>T4A04 Game by Manvir</font></h1>
+
+	<title>Game</title>
+	
+<script>
+
+   // global variables here
+let myGlobalX = 0
+let myClock
+
+
+   // global functions here
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+
+
+
+ function myCheckHit(){
+
+   if ( myHitOther('myImg01','myImg02') ){
+       //alert('you lose')
+      document.getElementById('myImg01').style.left = '20px'
+   }   
+   
+   if ( myHitOther('myImg01','myImg03') ){
+       //alert('you lose')
+      document.getElementById('myImg01').style.left = '20px'
+   }   
+   
+
+
+   // YOU WIN and go to next level!
+
+   if ( myHitOther('myImg01','myImg04') ){
+       alert('You Win, now go to the next level')
+      document.getElementById('myImg01').style.left = '20px'
+      location = 'https://www.google.ca'
+   }
+
+   // more if statements here
+
+}
+
+	
+
+
+
+
+
+
+
+
+
+function myCheckHit() {
+  if (myHitOther('myImg01', 'myImg02')) {
+    alert('You lose');
+    document.getElementById('myImg01').style.left = '20px';
+  }
+
+  if (myHitOther('myImg01', 'myImg03')) {
+    alert('You lose');
+    document.getElementById('myImg01').style.left = '20px';
+  }
+
+  if (myHitOther('myImg01', 'myImg04')) {
+    alert('You lose');
+    document.getElementById('myImg01').style.left = '20px';
+  }
+
+  // YOU WIN and go to the next level!
+  if (myHitOther('myImg01', 'myImg05')) {
+    alert('You Win, now go to the next level');
+    document.getElementById('myImg01').style.left = '20px';
+    location = 'https://www.google.ca';
+  }
+}
+
+</script>
+
+
+<img id="myImg02" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/acb5cb15-636b-4bd5-a06e-a62420c5fb7f/db51m39-1ece9e18-5c73-470a-a528-186c44840e2a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjYjVjYjE1LTYzNmItNGJkNS1hMDZlLWE2MjQyMGM1ZmI3ZlwvZGI1MW0zOS0xZWNlOWUxOC01YzczLTQ3MGEtYTUyOC0xODZjNDQ4NDBlMmEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.LNEc-TMZCObqEF8noj35mqa6hCfZlma8p6xooxzPNWk"  style="position:absolute; width:275px; height:400px; left:250px; top:400px;">
+<img id="myImg03" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/acb5cb15-636b-4bd5-a06e-a62420c5fb7f/db51m39-1ece9e18-5c73-470a-a528-186c44840e2a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjYjVjYjE1LTYzNmItNGJkNS1hMDZlLWE2MjQyMGM1ZmI3ZlwvZGI1MW0zOS0xZWNlOWUxOC01YzczLTQ3MGEtYTUyOC0xODZjNDQ4NDBlMmEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.LNEc-TMZCObqEF8noj35mqa6hCfZlma8p6xooxzPNWk"  style="position:absolute; width:275px; height:400px; left:1000px; top:400px;">
+	
+	
+	
+	
+<img id="myImg04" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/acb5cb15-636b-4bd5-a06e-a62420c5fb7f/db51m39-1ece9e18-5c73-470a-a528-186c44840e2a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjYjVjYjE1LTYzNmItNGJkNS1hMDZlLWE2MjQyMGM1ZmI3ZlwvZGI1MW0zOS0xZWNlOWUxOC01YzczLTQ3MGEtYTUyOC0xODZjNDQ4NDBlMmEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.LNEc-TMZCObqEF8noj35mqa6hCfZlma8p6xooxzPNWk" style="position:absolute; top:180; left:50%; transform: translateX(-40%);" alt="My Image">
+
+<img id="myImg05" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/acb5cb15-636b-4bd5-a06e-a62420c5fb7f/db51m39-1ece9e18-5c73-470a-a528-186c44840e2a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjYjVjYjE1LTYzNmItNGJkNS1hMDZlLWE2MjQyMGM1ZmI3ZlwvZGI1MW0zOS0xZWNlOWUxOC01YzczLTQ3MGEtYTUyOC0xODZjNDQ4NDBlMmEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.LNEc-TMZCObqEF8noj35mqa6hCfZlma8p6xooxzPNWk"  style="position:absolute; width:275px; height:400px; left:1000px; top:100px;">
+
+	
+	
+	
+	
+	
+	
+
+<audio autoplay loop>
+  <source src="Creepy Little Girl Talking, Singing, Laughing, Humming (HD) (FREE).mp3" type="audio/mpeg">
+  
+</audio>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<head>
+<style>
+#myImg01 {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  left: 50px;
+  top: 190px;
+}
+</style>
+</head>
+<body>
+
+<img id="myImg01" src="https://i.redd.it/nmd3itfu8dg61.png"   >
+
+<script>
+// Set the initial position and velocity variables
+var positionY = 190;
+var positionX = 50;
+var velocityY = 0;
+var velocityX = 2; // Horizontal velocity
+
+// Define the gravity force (lower value for slower falling)
+var gravity = 0.2;
+// Define the jump force
+var jumpForce = -6;
+
+// Add event listener to detect clicks
+document.addEventListener('click', function() {
+  velocityY = jumpForce; // Apply jump force to the vertical velocity
+  positionX += velocityX; // Update the horizontal position
+});
+
+// Define the function to update the image position
+function updatePosition() {
+  // Apply gravity to the vertical velocity
+  velocityY += gravity;
+
+  // Update the position based on the velocities
+  positionY += velocityY;
+  positionX += velocityX;
+
+  // Set the new position of the image
+  document.getElementById("myImg01").style.top = positionY + "px";
+  document.getElementById("myImg01").style.left = positionX + "px";
+  myCheckHit()
+  // Request the next animation frame
+  requestAnimationFrame(updatePosition);
+}
+
+// Call the updatePosition function to start the animation
+updatePosition();
+</script>
+
+</body>
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script>
+		// Set the initial position and velocity variables
+let positionY = 190;
+let positionX = 50;
+let velocityY = 0;
+const velocityX = 2; // Horizontal velocity
+
+// Define the gravity force
+const gravity = 0.2;
+// Define the jump force
+const jumpForce = -6;
+
+// Add event listener to detect clicks
+document.addEventListener('click', function () {
+  velocityY = jumpForce; // Apply jump force to the vertical velocity
+  positionX += velocityX; // Update the horizontal position
+});
+
+// Define the function to update the image position
+function updatePosition() {
+  // Apply gravity to the vertical velocity
+  velocityY += gravity;
+
+  // Update the position based on the velocities
+  positionY += velocityY;
+  positionX += velocityX;
+
+  // Set the new position of the image
+  const pigElement = document.getElementById("myImg01");
+  pigElement.style.top = positionY + "px";
+  pigElement.style.left = positionX + "px";
+
+
+
+  // Request the next animation frame
+  requestAnimationFrame(updatePosition);
+}
+
+
+      // Collision detected, reset pig position
+      positionY = 190;
+      positionX = 50;
+      pigElement.style.top = positionY + "px";
+      pigElement.style.left = positionX + "px";
+      break;
+   
+
+// Call the updatePosition function to start the animation
+updatePosition();
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
