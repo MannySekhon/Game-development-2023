@@ -131,19 +131,11 @@ function myCheckHit() {
 	
 	
 <head>
-<style>
-#myImg01 {
-  position: absolute;
-  width: 100px;
-  height: 80px;
-  left: 50px;
-  top: 190px;
-}
-</style>
+
 </head>
 <body>
 
-<img id="myImg01" src="https://i.redd.it/nmd3itfu8dg61.png"   >
+<img id="myImg01" src="https://i.redd.it/nmd3itfu8dg61.png"  style="position:absolute; width:100px; height:100px; left:100px; top:100px;  >
 
 <script>
 // Set the initial position and velocity variables
@@ -175,6 +167,7 @@ function updatePosition() {
   // Set the new position of the image
   document.getElementById("myImg01").style.top = positionY + "px";
   document.getElementById("myImg01").style.left = positionX + "px";
+								  
   myCheckHit()
   // Request the next animation frame
   requestAnimationFrame(updatePosition);
