@@ -168,7 +168,7 @@ function updatePosition() {
   document.getElementById("myImg01").style.top = positionY + "px";
   document.getElementById("myImg01").style.left = positionX + "px";
 								  
-  myCheckHit()
+  myCheckHit();
   // Request the next animation frame
   requestAnimationFrame(updatePosition);
 }
@@ -190,74 +190,6 @@ updatePosition();
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<script>
-		// Set the initial position and velocity variables
-let positionY = 190;
-let positionX = 50;
-let velocityY = 0;
-const velocityX = 2; // Horizontal velocity
-
-// Define the gravity force
-const gravity = 0.2;
-// Define the jump force
-const jumpForce = -6;
-
-// Add event listener to detect clicks
-document.addEventListener('click', function () {
-  velocityY = jumpForce; // Apply jump force to the vertical velocity
-  positionX += velocityX; // Update the horizontal position
-});
-
-// Define the function to update the image position
-function updatePosition() {
-  // Apply gravity to the vertical velocity
-  velocityY += gravity;
-
-  // Update the position based on the velocities
-  positionY += velocityY;
-  positionX += velocityX;
-
-  // Set the new position of the image
-  const pigElement = document.getElementById("myImg01");
-  pigElement.style.top = positionY + "px";
-  pigElement.style.left = positionX + "px";
-
-
-
-  // Request the next animation frame
-  requestAnimationFrame(updatePosition);
-}
-
-
-      // Collision detected, reset pig position
-      positionY = 190;
-      positionX = 50;
-      pigElement.style.top = positionY + "px";
-      pigElement.style.left = positionX + "px";
-      break;
-   
-
-// Call the updatePosition function to start the animation
-updatePosition();
-	</script>
 	
 	
 	
