@@ -1,4 +1,8 @@
-<body id="myBody" style="background-repeat:repeat; background-size: 120%" background="https://e0.pxfuel.com/wallpapers/272/503/desktop-wallpaper-forest-fog-bw-trees-dark-dual-wide-background-black-fog.jpg">
+<body id="myBody" style="background-repeat:repeat; background-size: 120%" background="https://e0.pxfuel.com/wallpapers/272/503/desktop-wallpaper-forest-fog-bw-trees-dark-dual-wide-background-black-fog.jpg"  onLoad="{
+  velocityY = jumpForce; // Apply jump force to the vertical velocity
+  positionX += velocityX; // Update the horizontal position
+
+}">
 
 <h1 align=center><font color=red>T4A04 Game by Manvir</font></h1>
 
@@ -9,6 +13,54 @@
    // global variables here
 let myGlobalX = 0
 let myClock
+
+
+
+// Set the initial position and velocity variables
+var positionY = 190;
+var positionX = 50;
+var velocityY = 0;
+var velocityX = 2; // Horizontal velocity
+
+// Define the gravity force (lower value for slower falling)
+var gravity = 0.2;
+// Define the jump force
+var jumpForce = -6;
+
+	
+	/*
+// Add event listener to detect clicks
+document.addEventListener('click', function() {
+  velocityY = jumpForce; // Apply jump force to the vertical velocity
+  positionX += velocityX; // Update the horizontal position
+});
+*/
+
+// Define the function to update the image position
+function updatePosition() {
+  // Apply gravity to the vertical velocity
+  velocityY += gravity;
+
+  // Update the position based on the velocities
+  positionY += velocityY;
+  positionX += velocityX;
+
+  // Set the new position of the image
+  document.getElementById("myImg01").style.top = positionY + "px";
+  document.getElementById("myImg01").style.left = positionX + "px";
+								  
+  myCheckHit();
+  // Request the next animation frame
+  requestAnimationFrame(updatePosition);
+}
+
+// Call the updatePosition function to start the animation
+updatePosition();
+
+
+
+
+
 
 
    // global functions here
@@ -129,53 +181,12 @@ function myCheckHit() {
 	
 	
 	
-	
-<head>
-
-</head>
 <body>
 
 <img id="myImg01" src="https://i.redd.it/nmd3itfu8dg61.png"  style="position:absolute; width:100px; height:100px; left:100px; top:100px;  >
 
-<script>
-// Set the initial position and velocity variables
-var positionY = 190;
-var positionX = 50;
-var velocityY = 0;
-var velocityX = 2; // Horizontal velocity
 
-// Define the gravity force (lower value for slower falling)
-var gravity = 0.2;
-// Define the jump force
-var jumpForce = -6;
 
-// Add event listener to detect clicks
-document.addEventListener('click', function() {
-  velocityY = jumpForce; // Apply jump force to the vertical velocity
-  positionX += velocityX; // Update the horizontal position
-});
-
-// Define the function to update the image position
-function updatePosition() {
-  // Apply gravity to the vertical velocity
-  velocityY += gravity;
-
-  // Update the position based on the velocities
-  positionY += velocityY;
-  positionX += velocityX;
-
-  // Set the new position of the image
-  document.getElementById("myImg01").style.top = positionY + "px";
-  document.getElementById("myImg01").style.left = positionX + "px";
-								  
-  myCheckHit();
-  // Request the next animation frame
-  requestAnimationFrame(updatePosition);
-}
-
-// Call the updatePosition function to start the animation
-updatePosition();
-</script>
 
 </body>
 
