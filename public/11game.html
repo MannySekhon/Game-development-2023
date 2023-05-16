@@ -71,25 +71,29 @@ function myHitOther(my1,my2){
 
 
 
-<input type=button value="Right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
-  myCheckHit()     // checks for all collisions
-}">
+function myCheckHit() {
+  if (myHitOther('myImg01', 'myImg02')) {
+    alert('You lose');
+    document.getElementById('myImg01').style.left = '20px';
+  }
 
-<input type=button value="Down" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
-  myCheckHit()     // checks for all collisions
-}"><br><br>
+  if (myHitOther('myImg01', 'myImg03')) {
+    alert('You lose');
+    document.getElementById('myImg01').style.left = '20px';
+  }
 
-	
-		<input type=button value="Up" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 10 + 'px'
-  myCheckHit()     // checks for all collisions
-}">
-<input type=button value="Left" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 10 + 'px'
-  myCheckHit()     // checks for all collisions
-}">
+  if (myHitOther('myImg01', 'myImg04')) {
+    alert('You lose');
+    document.getElementById('myImg01').style.left = '20px';
+  }
+
+  // YOU WIN and go to the next level!
+  if (myHitOther('myImg01', 'myImg05')) {
+    alert('You Win, now go to the next level');
+    document.getElementById('myImg01').style.left = '20px';
+    location = 'https://www.google.ca';
+  }
+}
 
 
 
@@ -112,7 +116,7 @@ function myHitOther(my1,my2){
 
 <audio autoplay loop>
   <source src="Creepy Little Girl Talking, Singing, Laughing, Humming (HD) (FREE).mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
+  
 </audio>
 
 	
@@ -276,27 +280,4 @@ updatePosition();
 	
 	
 	
-	function myCheckHit() {
-  if (myHitOther('myImg01', 'myImg02')) {
-    alert('You lose');
-    document.getElementById('myImg01').style.left = '20px';
-  }
-
-  if (myHitOther('myImg01', 'myImg03')) {
-    alert('You lose');
-    document.getElementById('myImg01').style.left = '20px';
-  }
-
-  if (myHitOther('myImg01', 'myImg04')) {
-    alert('You lose');
-    document.getElementById('myImg01').style.left = '20px';
-  }
-
-  // YOU WIN and go to the next level!
-  if (myHitOther('myImg01', 'myImg05')) {
-    alert('You Win, now go to the next level');
-    document.getElementById('myImg01').style.left = '20px';
-    location = 'https://www.google.ca';
-  }
-}
-
+	
