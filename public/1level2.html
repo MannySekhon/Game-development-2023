@@ -59,27 +59,34 @@ function myAuto(){
 
 function myCheckHit(){
 
-   if ( myHitOther('myImg01','myImg02') ){
-       //alert('you lose')
-      document.getElementById('myImg01').style.left = '20px'
-      document.getElementById('myImg01').style.top = '60px'
-   }   
-   
-   if ( myHitOther('myImg01','myImg03') ){
-       //alert('you lose')
-      document.getElementById('myImg01').style.left = '20px'
-      document.getElementById('myImg01').style.top = '60px'
-   }   
-   
+   function myCheckHit() {
+  if (myHitOther('myImg01', 'myImg02')) {
+    //alert('you lose')
+    document.getElementById('myImg01').style.left = '20px'
+    document.getElementById('myImg01').style.top = '60px'
+  }
 
+  if (myHitOther('myImg01', 'myImg03')) {
+    //alert('you lose')
+    document.getElementById('myImg01').style.left = '20px'
+    document.getElementById('myImg01').style.top = '60px'
+  }
 
-   // YOU WIN and go to next level!
+  if (myHitOther('myImg01', 'myImg04')) {
+    alert('You Win, now go to the next level')
+    document.getElementById('myImg01').style.left = '60px'
+    location = 'https://www.google.ca'
+  }
 
-   if ( myHitOther('myImg01','myImg04') ){
-       alert('You Win, now go to the next level')
-      document.getElementById('myImg01').style.left = '60px'
-      location = 'https://www.google.ca'
-   }
+  // Collision with middle hand (myImg03)
+  if (myHitOther('myImg01', 'myImg03')) {
+    alert('You lose')
+    document.getElementById('myImg01').style.left = '20px'
+    document.getElementById('myImg01').style.top = '60px'
+  }
+
+  // more if statements here
+}
 
    // more if statements here
 
