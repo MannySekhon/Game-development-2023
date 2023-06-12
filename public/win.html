@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>You Win!</title>
+  <style>
+    body {
+      background-color: #F9F9F9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    #content {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    #button-wrapper {
+      margin-top: 20px;
+    }
+
+    .rounded-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #77C360;
+      color: #FFF;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .rounded-button:hover {
+      background-color: #5CA244;
+    }
+
+    #confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <h1>You Win!</h1>
+    <div id="button-wrapper">
+      <a class="rounded-button" href="https://mannysekhon.github.io/Game-development-2023/public/11gamelvl1.html">Redo Game</a>
+    </div>
+  </div>
+  <canvas id="confetti"></canvas>
+
+  <script>
+    function createConfetti() {
+      const canvas = document.getElementById('confetti');
+      const ctx = canvas.getContext('2d');
+      const colors = ['#FFD700', '#FFA07A', '#FFC0CB', '#ADFF2F', '#7FFFD4'];
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      function Confetti() {
+        this.x = randomInRange(0, canvas.width);
+        this.y = -10;
+        this.rotation = randomInRange(0, 2 * Math.PI);
+        this.color = colors[Math.floor(randomInRange(0, colors.length))];
+        this.speed = {
+          x: randomInRange(-2, 2),
+          y: randomInRange(10, 20)
+        };
+        this.radius = randomInRange(5, 10);
+      }
+
+      Confetti.prototype.update = function () {
+        this.x += this.speed.x;
+        this.y += this.speed.y;
+
+        if (this.y > canvas.height) {
+          this.y = -10;
+        }
+      };
+
+      Confetti.prototype.draw = function () {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+
+        ctx.beginPath();
+        ctx.moveTo(-this.radius, -this.radius);
+        ctx.lineTo(this.radius, -this.radius);
+        ctx.lineTo(this.radius, this.radius);
+        ctx.lineTo(-this.radius, this.radius);
+        ctx.closePath();
+
+        ctx.fillStyle = this.color;
+        ctx.fill();
+
+        ctx.restore();
+      };
+
+      const confettiList = [];
+
+      for (let i = 0; i < 200; i++) {
+        confettiList.push(new Confetti());
+      }
+
+      function animateConfetti() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < confettiList.length; i++) {
+          const confetti = confettiList[i];
+          confetti.update();
+          confetti.draw();
+        }
+
+        requestAnimationFrame(animateConfetti);
+      }
+
+      animateConfetti();
+    }
+
+    window.addEventListener('load', createConfetti);
+  </script>
+</body>
+</html>
